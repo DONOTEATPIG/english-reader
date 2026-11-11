@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Cast — 少年音 10 条</title>
+<style>
+:root{
+  --paper:#f8f4ec; --card:#fffdf8; --ink:#1c1a16; --soft:#4b463c; --faint:#8b8474;
+  --rule:#ded5c3; --accent:#a03f2b;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;
+  --sans:"Avenir Next","Segoe UI",-apple-system,"PingFang SC",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+     -webkit-font-smoothing:antialiased;line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:44px 22px 80px}
+.top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+h1{font-size:26px;font-weight:600;letter-spacing:.01em;margin:0}
+a.back{font-family:var(--sans);font-size:12.5px;color:var(--accent);text-decoration:none;
+       border-bottom:1px solid rgba(160,63,43,.35)}
+.lede{color:var(--soft);font-size:15px;margin:10px 0 8px;max-width:66ch}
+.lede2{color:var(--faint);font-family:var(--sans);font-size:12.5px;margin:0 0 26px;max-width:66ch;line-height:1.8}
+h2{font-size:13px;font-family:var(--sans);letter-spacing:.18em;text-transform:uppercase;
+   color:var(--faint);font-weight:600;margin:38px 0 4px;padding-top:14px;border-top:1px solid var(--rule)}
+.who{font-size:21px;margin:6px 0 2px}
+.who small{font-family:var(--sans);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-left:10px}
+.desc{color:var(--soft);font-size:14.5px;margin:0 0 8px;max-width:66ch}
+.q{font-family:var(--serif);font-style:italic;color:#6b5f4c;font-size:13.5px;
+   border-left:2px solid var(--rule);padding-left:12px;margin:10px 0 16px;max-width:64ch}
+.row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:620px){.row{grid-template-columns:1fr}}
+.chip{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:14px 14px 12px;
+      cursor:pointer;transition:border-color .16s,box-shadow .16s;position:relative;text-align:left;min-height:104px}
+.chip:hover{border-color:#c8bca6}
+.chip.on{border-color:var(--accent);box-shadow:0 0 0 1px rgba(160,63,43,.25) inset}
+.chip.cur{border-color:rgba(160,63,43,.55)}
+.chip.cur .k{color:var(--accent)}
+.chip .k{font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;color:var(--faint)}
+.chip .v{font-size:16.5px;margin:3px 0 6px;padding-right:24px}
+.chip .f{font-family:var(--sans);font-size:11.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+.chip .n{font-family:var(--sans);font-size:11.5px;color:#8a7c67;margin-top:4px}
+.chip .ic{position:absolute;right:12px;top:13px;width:22px;height:22px;border-radius:50%;
+          border:1px solid var(--rule);display:flex;align-items:center;justify-content:center}
+.chip.on .ic{border-color:var(--accent)}
+.chip .ic::after{content:"";display:block;width:0;height:0;border-left:7px solid var(--accent);
+                 border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;margin-left:2px}
+.chip.on .ic::after{width:7px;height:8px;border:0;margin:0;
+  background:linear-gradient(90deg,var(--accent) 0 2px,transparent 2px 5px,var(--accent) 5px 7px)}
+.note{margin-top:44px;border-top:1px solid var(--rule);padding-top:18px;color:var(--soft);
+      font-size:13.5px;font-family:var(--sans);line-height:1.8}
+.note b{color:var(--ink);font-weight:600}
+.note code{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:rgba(0,0,0,.04);
+           padding:1px 4px;border-radius:2px}
+.tbl{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:12px;color:var(--soft);margin:8px 0 4px}
+.tbl th,.tbl td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--rule)}
+.tbl th{font-weight:600;color:var(--faint);letter-spacing:.06em}
+</style>
+
+<style>
+.cast{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+@media(max-width:640px){.cast{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:18px 18px 16px}
+.card.lead{border-color:rgba(160,63,43,.5)}
+.card .k{font-family:var(--sans);font-size:11px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+.card .nm{font-size:21px;margin:5px 0 1px}
+.card .nm small{font-family:var(--sans);font-size:12px;color:var(--faint);margin-left:8px;letter-spacing:.03em}
+.card .ref{font-size:13.5px;color:var(--soft);margin:6px 0 2px}
+.card .ac{font-family:var(--sans);font-size:11.5px;color:var(--faint);line-height:1.8;margin:8px 0 0}
+.card .line{font-style:italic;color:#6b5f4c;border-left:2px solid var(--rule);
+            padding-left:12px;margin:12px 0 14px;font-size:13.5px;max-width:58ch}
+.pbtn{font-family:var(--sans);font-size:12px;color:var(--ink);background:transparent;
+      border:1px solid var(--rule);border-radius:3px;padding:7px 13px;cursor:pointer;transition:.14s}
+.pbtn:hover{border-color:var(--accent);color:var(--accent)}
+.pbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pbtn + .pbtn{margin-left:8px}
+.castnote{font-family:var(--sans);font-size:12px;color:var(--faint);line-height:1.9;
+          margin:14px 0 0;padding:12px 14px;border:1px dashed var(--rule);border-radius:3px}
+</style>
+<script>
+/* Voice cast — continued from chapters 1–50.
+   Ning Weichen now uses M1 of Ma Zhengyang's Hua Cheng line: bright / teasing,
+   rising sentence tails (Roger / formant x1.028 / F0 154 Hz / low 16%).
+   All 283 chapters (including the first 50) now use the Hiddleston narration
+   line: British RP, warm low-mid, unhurried (en-GB-Thomas / -8 Hz / -10%).
+   M2 (Brian / 137 Hz) survives only as a historical audition sample.
+   Ye Sheng stays on Chen Zhangtaikang's Wang Wei line (F0 ~147 Hz, cool, flat,
+   slow). With M1 the two no longer rely on an 18 Hz gap: they separate by
+   timbre (bright/rising vs cool/flat) and tempo. Luo Xingyan now follows U1
+   (Uchiyama: cool, flat, falling tails, F0 136 Hz); Luo Heng follows Y1
+   (Yuan Mingzhe: clear, bright, forward, F0 154 Hz). The two leads are unchanged.
+   Browser synthesis approximates the line with pitch / rate / volume / voice,
+   not a linear Hz mapping. */
+window.VOICES = {
+  NR: {label:'旁白',   desc:'抖森线 · 英式中低音 · 从容',    pitch:0.90, rate:0.90, vol:0.95, v:1,
+       ref:'Tom Hiddleston 路线 / en-GB-Thomas · 英式 RP · 中低音 · 语速 −10% · 句尾稳落'},
+  NW: {label:'宁微尘', desc:'清透亮型攻音 · 马正阳·花城 M1', pitch:1.24, rate:1.04, vol:1.00, v:1,
+       ref:'M1 轻佻·尾音上钩 / Roger · 共振峰 ×1.028 · F0 154 Hz · 低频 16%'},
+  YS: {label:'叶笙',   desc:'冷淡美人音 · 陈张太康·王维',   pitch:1.30, rate:0.90, vol:0.86, v:2,
+       ref:'清冷 · 平 · 薄 / F0 ≈147 Hz（宁微尘换 M1 后靠音色与语速区分）· 语速 −10%'},
+  LX: {label:'洛兴言', desc:'冷少年 · 平直（U1）',           pitch:1.10, rate:0.96, vol:1.00, v:3,
+       ref:'U1 冷·平直 / 内山昂辉 · Thomas · 共振峰 ×1.050 · F0 136 Hz · 低频 13%'},
+  CZ: {label:'程则',   desc:'女声 · 冷静执行官',            pitch:1.42, rate:0.96, vol:0.92, v:4},
+  LH: {label:'罗衡',   desc:'清亮 · 透（Y1）',              pitch:1.34, rate:1.02, vol:1.00, v:5,
+       ref:'Y1 清亮·透 / 袁铭喆 · Thomas · 共振峰 ×1.070 · F0 154 Hz · 低频 11%'},
+  TY: {label:'天谕',   desc:'低沉 · 稳 · 校长',             pitch:0.80, rate:0.88, vol:0.95, v:6},
+  SW: {label:'苏婉落', desc:'女声 · 温软',                  pitch:1.40, rate:0.95, vol:0.90, v:7},
+  LQ: {label:'梁青青', desc:'女声 · 清亮',                  pitch:1.46, rate:1.00, vol:0.92, v:8},
+  XW: {label:'夏温时', desc:'少年 · 清亮',                  pitch:1.20, rate:1.03, vol:1.00, v:9},
+  XC: {label:'谢文辞', desc:'中性偏冷',                     pitch:1.06, rate:0.94, vol:0.94, v:10},
+  SK: {label:'故事王 / 主持', desc:'沙哑 · 低 · 慢',         pitch:0.76, rate:0.82, vol:0.90, v:11},
+  AD: {label:'安德鲁', desc:'稳重 · 年长',                  pitch:0.88, rate:0.90, vol:0.94, v:12},
+  YZ: {label:'杨宗 / 跟班', desc:'普通男声 · 市井',          pitch:0.96, rate:1.02, vol:1.00, v:13},
+  ZX: {label:'周向笛', desc:'少年 · 清亮',                  pitch:1.24, rate:1.04, vol:1.00, v:14},
+  HY: {label:'黑鸢',   desc:'少年 · 明朗',                  pitch:1.26, rate:1.06, vol:1.00, v:15},
+  QL: {label:'齐岚',   desc:'女声 · 沉稳',                  pitch:1.36, rate:0.94, vol:0.92, v:16},
+  CR: {label:'论坛 / 群众', desc:'轻快 · 杂声',              pitch:1.12, rate:1.06, vol:0.88, v:17},
+  OT: {label:'对白',   desc:'中性对白声 · 未署名台词',       pitch:1.04, rate:1.00, vol:0.96, v:18},
+  TL: {label:'图灵',   desc:'冷静 · 精确',                   pitch:1.00, rate:0.96, vol:0.98, v:19},
+  LS: {label:'灵商',   desc:'年长 · 低沉',                   pitch:0.74, rate:0.86, vol:0.94, v:20},
+  PD: {label:'乐园园长', desc:'诡异 · 尖亮',                 pitch:1.30, rate:1.08, vol:0.95, v:21},
+  LIQ:{label:'李缺',   desc:'少年 · 清亮',                   pitch:1.22, rate:1.04, vol:1.00, v:22},
+  PH: {label:'裴徊',   desc:'少年 · 清亮',                   pitch:1.20, rate:1.02, vol:1.00, v:23},
+  XY: {label:'肖易施', desc:'少年 · 清亮',                   pitch:1.24, rate:1.04, vol:1.00, v:24},
+  FG: {label:'弗丽嘉', desc:'女声 · 冷静',                   pitch:1.40, rate:0.96, vol:0.92, v:25},
+  DM: {label:'德墨忒尔', desc:'女声 · 沉稳',                 pitch:1.34, rate:0.94, vol:0.92, v:26},
+  DQ: {label:'秦博士', desc:'年长 · 低沉',                   pitch:0.76, rate:0.88, vol:0.94, v:27},
+  DY: {label:'严博士', desc:'年长 · 低沉',                   pitch:0.76, rate:0.88, vol:0.94, v:28}
+};
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>Ten young voices, auditioned</h1>
+    <a class="back" href="./">← 回到正文</a>
+  </div>
+  <p class="lede">当前选用 <b>M1 · 轻佻·尾音上钩</b>（F0 154&nbsp;Hz · 低频 16%）。全书 <b>283 章</b>旁白已换成 <b>抖森线</b>（英式 RP · 中低音 · 从容），前 50 章一并重渲；M2 只作上方历史试听样本。</p>
+  <p class="lede2">之前难听的根因在<b>共振峰</b>：我把声道拉长（×0.945）去追“磁性”，等于把一个二十岁的人硬拉成四十岁。这一批全部反过来——声道缩到 ×1.01–1.075，音高抬到 128–154&nbsp;Hz，低频能砍就砍，一个谐波激励器都不用。</p>
+
+  <h2>01 · 马正阳</h2>
+  <p class="who">马正阳 · 花城那种轻佻&nbsp;<small>bright · singsong · teasing</small></p>
+  <p class="desc">花城的少年感不在低，在<b>飘</b>：音区偏高、句子往上走、尾音带钩，像一边说一边在笑。两条差在“笑多少”——M1 把尾音上挑拉满（问句 +17&nbsp;Hz），M2 收回成一个干净利落的普通少年。</p>
+  <p class="q">“Did I frighten you just now?”&nbsp; / &nbsp;“Gege, let's turn in early tonight…”</p>
+  <div class="row">
+    <div class="chip cur" data-src="audio/samples/m1.mp3"><div class="ic"></div><div class="k">M1 · CURRENT</div><div class="v">轻佻·尾音上钩</div><div class="f">F0 154 Hz · 低频 16%</div><div class="n">笑意最外放，问句往上挑得最狠 — 全书正文在用</div></div>
+    <div class="chip" data-src="audio/samples/m2.mp3"><div class="ic"></div><div class="k">M2</div><div class="v">少年本音·干净</div><div class="f">F0 137 Hz · 低频 25%</div><div class="n">不吊着，语速最快 — 历史样本（正文旁白已改抖森线）</div></div>
+  </div>
+
+  <h2>02 · 内山昂辉</h2>
+  <p class="who">内山昂辉 · 月岛／伏黑那种冷少年&nbsp;<small>flat · edged · low-volume</small></p>
+  <p class="desc">他的少年音是<b>平的、有锋的</b>：几乎不拖腔，句尾往下落，音色薄但咬字清楚，情绪压在字底下。两条差在“气”——U1 正常音量，U2 压得很轻，像贴着耳朵讲。</p>
+  <div class="row">
+    <div class="chip" data-src="audio/samples/u1.mp3"><div class="ic"></div><div class="k">U1</div><div class="v">冷·平直</div><div class="f">F0 136 Hz · 高频 16%</div><div class="n">句尾落，不飘；像不太想解释</div></div>
+    <div class="chip" data-src="audio/samples/u2.mp3"><div class="ic"></div><div class="k">U2</div><div class="v">气声·更轻</div><div class="f">F0 133 Hz · 语速 −10%</div><div class="n">音量压下去，懒，但每个字都在</div></div>
+  </div>
+
+  <h2>03 · 袁铭喆</h2>
+  <p class="who">袁铭喆 · 清亮少年&nbsp;<small>clear · light · forward</small></p>
+  <p class="desc">这条是<b>亮</b>：4&nbsp;kHz 附近抬起来，音色往前送，不靠胸腔撑。Y1 最“少年”，亮到有点透；Y2 把中频收圆，暖一点，久听不刺。</p>
+  <div class="row">
+    <div class="chip" data-src="audio/samples/y1.mp3"><div class="ic"></div><div class="k">Y1</div><div class="v">清亮·透</div><div class="f">F0 154 Hz · 高频 19%</div><div class="n">少年感最足，干净的亮</div></div>
+    <div class="chip" data-src="audio/samples/y2.mp3"><div class="ic"></div><div class="k">Y2</div><div class="v">温润·收圆</div><div class="f">F0 150 Hz · 高频 11%</div><div class="n">亮度收掉，暖，但不闷</div></div>
+  </div>
+
+  <h2>04 · 大鲲</h2>
+  <p class="who">大鲲 · 有体积的少年&nbsp;<small>solid · chesty · still young</small></p>
+  <p class="desc">大鲲的路子是<b>少年但有分量</b>——不是压低变大叔，是音色本身有体积。D1 保留低频（29%），听起来像个身高已经长起来的少年；D2 再往下一点，带颗粒。</p>
+  <div class="row">
+    <div class="chip" data-src="audio/samples/d1.mp3"><div class="ic"></div><div class="k">D1</div><div class="v">厚少年</div><div class="f">F0 140 Hz · 低频 29%</div><div class="n">十条里最有体积的一条</div></div>
+    <div class="chip" data-src="audio/samples/d2.mp3"><div class="ic"></div><div class="k">D2</div><div class="v">偏低·带颗粒</div><div class="f">F0 128 Hz · 低频 23%</div><div class="n">沉一点，粗一点，不是沙哑</div></div>
+  </div>
+
+  <h2>05 · 刘思岑</h2>
+  <p class="who">刘思岑 · 中性清冷&nbsp;<small>androgynous · thin · cool</small></p>
+  <p class="desc">这条<b>性别感最模糊</b>：声道最短（×1.075），低频砍 3.5&nbsp;dB，听起来薄、凉、没有攻击性但也不亲近。L2 把语速放到最慢、音量放软，是十条里最“软”的一条。</p>
+  <div class="row">
+    <div class="chip" data-src="audio/samples/l1.mp3"><div class="ic"></div><div class="k">L1</div><div class="v">中性·清冷</div><div class="f">F0 140 Hz · 高频 22%</div><div class="n">薄而凉，像玻璃</div></div>
+    <div class="chip" data-src="audio/samples/l2.mp3"><div class="ic"></div><div class="k">L2</div><div class="v">软少年</div><div class="f">F0 152 Hz · 语速 −10%</div><div class="n">最软最慢，尾音轻轻带一下</div></div>
+  </div>
+
+  <div class="note">
+    <b>十条共用同一句台词</b>，只有底声、共振峰、频响、语速、尾音走向不同。对照表：
+
+    <table class="tbl">
+      <tr><th>编号</th><th>参考</th><th>底声</th><th>共振峰</th><th>F0</th><th>低频占比</th></tr>
+      <tr><td>M1</td><td>马正阳·轻佻</td><td>Roger</td><td>×1.028</td><td>154</td><td>16%</td></tr>
+      <tr><td>M2</td><td>马正阳·干净</td><td>Brian</td><td>×1.025</td><td>137</td><td>25%</td></tr>
+      <tr><td>U1</td><td>内山·冷</td><td>Thomas</td><td>×1.050</td><td>136</td><td>13%</td></tr>
+      <tr><td>U2</td><td>内山·气声</td><td>Eric</td><td>×1.060</td><td>133</td><td>16%</td></tr>
+      <tr><td>Y1</td><td>袁铭喆·清亮</td><td>Thomas</td><td>×1.070</td><td>154</td><td>11%</td></tr>
+      <tr><td>Y2</td><td>袁铭喆·温润</td><td>Mitchell</td><td>×1.040</td><td>150</td><td>21%</td></tr>
+      <tr><td>D1</td><td>大鲲·厚</td><td>Mitchell</td><td>×1.010</td><td>140</td><td>29%</td></tr>
+      <tr><td>D2</td><td>大鲲·颗粒</td><td>Liam</td><td>×1.035</td><td>128</td><td>23%</td></tr>
+      <tr><td>L1</td><td>刘思岑·清冷</td><td>William</td><td>×1.075</td><td>140</td><td>13%</td></tr>
+      <tr><td>L2</td><td>刘思岑·软</td><td>Guy</td><td>×1.050</td><td>152</td><td>15%</td></tr>
+    </table>
+
+    <b>电平：</b>十条都走和正文完全相同的两遍法<b>线性</b>响度归一（−19&nbsp;LUFS），所以你在这里听到的，就是嵌进正文后的样子，不会再有“试听好听、正文变味”。<br>
+    <b>正文状态：</b>全书 <b>283 章</b>旁白已换成 <b>抖森线</b>（英式 RP · 中低音 · 从容），前 50 章一并重渲；M2 少年本音现在只是上方的一条历史试听样本。<b>主角状态：</b>宁微尘 M1（更亮、更薄、句尾上挑）、叶笙冷淡美人音、洛兴言 U1、罗衡 Y1，四条不动；宁微尘与叶笙不再靠 18&nbsp;Hz 音区差，改靠「亮/飘 vs 冷/平」与语速区分。283 章全部为成品 MP3，见下方 Cast。<br>
+    <b>边界：</b>这是按声学特征靠近——音区、共振峰、频响、语速、句尾走向；不截取演员原声，也不做声纹克隆。能给你“这类嗓子”的质地，给不了他本人在笑的那一下。
+  </div>
+
+  <h2>Cast · 延续到乐园（51–283 章）</h2>
+  <p class="lede">宁微尘已从 <b>M2 少年本音·干净</b> 换成 <b>M1 轻佻·尾音上钩</b>：更亮、更薄、句尾往上走，笑意更外放。全书 283 章按 M1 合成；叶笙仍是陈张太康·王维那条<b>冷淡美人音</b>，参数不变。两人不再靠 18&nbsp;Hz 音区差，改靠「亮/飘 vs 冷/平」和语速区分，一对话仍分得开。</p>
+  <p class="lede2">全书 <b>1–283 章</b>旁白已从 M2 的少年本音换成 <b>抖森线</b>（Tom Hiddleston 路线）：英式 RP、中低音、醇厚从容、句尾稳落，底声 <b>en-GB-Thomas</b>、−8&nbsp;Hz、语速 −10%。前 50 章也一并重新渲染，M2 只留作上方历史试听样本；宁微尘 M1、叶笙、洛兴言 U1、罗衡 Y1 四条声线一点没动。283 章整章 MP3 与段落时间轴全部按新旁白重生成，锁屏、后台、跨章自动连播照旧；浏览器语音只在音频加载失败时兜底。正文已续更到 <b>乐园</b> 副本收尾（253–282 章）与第 283 章「照片」，新增 102 章精读与成品音频。</p>
+  <div class="cast">
+<div class="card lead"><div class="k">NW · 清透亮型攻音</div><div class="nm">宁微尘<small>Ning Weichen</small></div><div class="ref"><b>清透亮型攻音</b> — 马正阳 · 花城（少年感在「飘」，不在低）</div><div class="ac">参考声线：马正阳 · 花城（少年感在「飘」，不在低）<br>声学设定：M1 轻佻·尾音上钩 · Roger · 共振峰 ×1.028 · F0 154 Hz · 低频 16%<br>浏览器参数：pitch 1.24 · rate 1.04 · volume 1.00</div><div class="line">&quot;Darling. You want to hear me tell a story?&quot;</div><button class="pbtn" data-voice="NW" data-line="Darling. You want to hear me tell a story?">▶ 试听这句</button></div><div class="card lead"><div class="k">YS · 冷淡美人音</div><div class="nm">叶笙<small>Ye Sheng</small></div><div class="ref"><b>冷淡美人音</b> — 陈张太康 · 王者荣耀王维（平、薄、情绪压在字底下）</div><div class="ac">参考声线：陈张太康 · 王者荣耀王维（平、薄、情绪压在字底下）<br>声学设定：清冷 · 句尾落 · F0 ≈147 Hz（宁微尘换 M1 后靠音色与语速区分）· 语速 −10%<br>浏览器参数：pitch 1.30 · rate 0.90 · volume 0.86</div><div class="line">&quot;Everyone's told one. If you don't, won't you look like you can't fit in?&quot;</div><button class="pbtn" data-voice="YS" data-line="Everyone's told one. If you don't, won't you look like you can't fit in?">▶ 试听这句</button></div>
+  </div>
+  <button class="pbtn" id="pairBtn">▶ 对听两句（先宁微尘，后叶笙）</button>
+  <span class="lede2" style="margin-left:10px">第 48 章原句，最能听出攻音与冷淡音的落差</span>
+
+  <h2>配角声线 · 同句对照</h2>
+  <p class="lede2">沿用「共用同一句台词」的做法，只换声线参数：<i>「Tell me what you saw that night.」</i>。群众、未署名对白与旁白各占一档，避免主角音色被摊到所有人身上。</p>
+  <table class="tbl">
+    <tr><th>角色</th><th>编号</th><th>声线</th><th>参数</th><th>试听</th></tr>
+<tr><td><b>洛兴言</b></td><td>LX</td><td>冷少年 · 平直（U1）</td><td>pitch 1.10 · rate 0.96</td><td><button class="pbtn" data-voice="LX" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>夏温时</b></td><td>XW</td><td>少年 · 清亮</td><td>pitch 1.20 · rate 1.03</td><td><button class="pbtn" data-voice="XW" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>周向笛</b></td><td>ZX</td><td>少年 · 清亮</td><td>pitch 1.24 · rate 1.04</td><td><button class="pbtn" data-voice="ZX" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>黑鸢</b></td><td>HY</td><td>少年 · 明朗</td><td>pitch 1.26 · rate 1.06</td><td><button class="pbtn" data-voice="HY" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>谢文辞</b></td><td>XC</td><td>中性偏冷</td><td>pitch 1.06 · rate 0.94</td><td><button class="pbtn" data-voice="XC" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>罗衡</b></td><td>LH</td><td>清亮 · 透（Y1）</td><td>pitch 1.34 · rate 1.02</td><td><button class="pbtn" data-voice="LH" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>天谕</b></td><td>TY</td><td>低沉 · 稳 · 校长</td><td>pitch 0.80 · rate 0.88</td><td><button class="pbtn" data-voice="TY" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>安德鲁</b></td><td>AD</td><td>稳重 · 年长</td><td>pitch 0.88 · rate 0.90</td><td><button class="pbtn" data-voice="AD" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>故事王 / 主持</b></td><td>SK</td><td>沙哑 · 低 · 慢</td><td>pitch 0.76 · rate 0.82</td><td><button class="pbtn" data-voice="SK" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>程则</b></td><td>CZ</td><td>女声 · 冷静执行官</td><td>pitch 1.42 · rate 0.96</td><td><button class="pbtn" data-voice="CZ" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>苏婉落</b></td><td>SW</td><td>女声 · 温软</td><td>pitch 1.40 · rate 0.95</td><td><button class="pbtn" data-voice="SW" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>梁青青</b></td><td>LQ</td><td>女声 · 清亮</td><td>pitch 1.46 · rate 1.00</td><td><button class="pbtn" data-voice="LQ" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>齐岚</b></td><td>QL</td><td>女声 · 沉稳</td><td>pitch 1.36 · rate 0.94</td><td><button class="pbtn" data-voice="QL" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>杨宗 / 跟班</b></td><td>YZ</td><td>普通男声 · 市井</td><td>pitch 0.96 · rate 1.02</td><td><button class="pbtn" data-voice="YZ" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>论坛 / 群众</b></td><td>CR</td><td>轻快 · 杂声</td><td>pitch 1.12 · rate 1.06</td><td><button class="pbtn" data-voice="CR" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>未署名对白</b></td><td>OT</td><td>中性对白声</td><td>pitch 1.04 · rate 1.00</td><td><button class="pbtn" data-voice="OT" data-line="Tell me what you saw that night.">▶</button></td></tr><tr><td><b>旁白</b></td><td>NR</td><td>抖森线 · 英式中低音 · 从容</td><td>pitch 0.90 · rate 0.90</td><td><button class="pbtn" data-voice="NR" data-line="Tell me what you saw that night.">▶</button></td></tr>
+  </table>
+  <div class="castnote">
+    <b>旁白：</b>已从 M2 少年本音换成 <b>抖森线</b>（Tom Hiddleston 路线）——英式 RP、中低音、醇厚从容、语速 −10%、句尾稳落；底声 en-GB-Thomas，与宁微尘 M1（美式亮）、叶笙（冷薄）拉开，长段叙述不抢对白。全书 283 章（含前 50 章）已按此重渲；上表 NR 行可试听。<br>
+    <b>配角参照：</b>洛兴言改走 <b>U1</b>（内山昂辉 · 冷 · 平直，句尾落、不拖腔，F0 136 Hz），罗衡改走 <b>Y1</b>（袁铭喆 · 清亮 · 透，音色往前送，F0 154 Hz）；两位男主声线不变。<br>
+    <b>延续方式：</b>逐段判断说话人（人名 + 说话动词、`Darling / gege` 等专属称呼、双人对话轮替），再按上表分配声线；判断不了的台词落到中性对白声，不硬猜。旁白单独一档。<br>
+    <b>边界：</b>和前十条一样，这是按<b>声学特征</b>靠近——音区、共振峰类比、频响、语速、句尾走向；不截取演员原声，也不做声纹克隆。能给你「这类嗓子」的质地，给不了马正阳在笑的那一下。全书共用神经语音底声，四位主角各自独立、配角按声线组归并，旁白单独走抖森线，声线关系（谁亮、谁冷、谁低）保持一致。
+  </div>
+
+
+<script>
+(function(){
+  var sc = new URLSearchParams(location.search).get('sharecode');
+  var one = document.createElement('audio');
+  one.preload = 'none';
+  document.body.appendChild(one);
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.addEventListener('click', function(){
+      var src = c.getAttribute('data-src');
+      if (sc && src.indexOf('sharecode=') === -1) src += (src.indexOf('?')>-1?'&':'?') + 'sharecode=' + encodeURIComponent(sc);
+      if (one.getAttribute('data-cur') === c.getAttribute('data-src') && !one.paused) {
+        one.pause();
+        document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+        return;
+      }
+      document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+      c.classList.add('on');
+      one.setAttribute('data-cur', c.getAttribute('data-src'));
+      one.src = src; one.play();
+    });
+  });
+  one.addEventListener('ended', function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+  });
+})();
+</script>
+<script>
+(function(){
+  var sc = new URLSearchParams(location.search).get('sharecode');
+  if (!sc) return;
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (!h || /^(#|https?:|mailto:|javascript:)/.test(h)) return;
+    a.setAttribute('href', h + (h.indexOf('?') > -1 ? '&' : '?') + 'sharecode=' + encodeURIComponent(sc));
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var V = window.VOICES || {};
+  function say(key, line, btn, next){
+    var cfg = V[key];
+    if (!cfg || !window.speechSynthesis || !window.SpeechSynthesisUtterance) { if (next) next(); return; }
+    var u = new SpeechSynthesisUtterance(line);
+    u.lang = 'en-US'; u.pitch = cfg.pitch; u.rate = cfg.rate; u.volume = cfg.vol;
+    try {
+      var vs = (speechSynthesis.getVoices() || []).filter(function(v){ return /^en/i.test(v.lang); });
+      if (vs.length) u.voice = vs[(cfg.v * 7 + 3) % vs.length];
+    } catch (e) {}
+    u.onend = function () { if (btn) btn.classList.remove('on'); if (next) next(); };
+    u.onerror = u.onend;
+    try { speechSynthesis.speak(u); } catch (e) { u.onend(); }
+  }
+  document.querySelectorAll('[data-voice]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      speechSynthesis.cancel();
+      document.querySelectorAll('[data-voice]').forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      say(b.getAttribute('data-voice'), b.getAttribute('data-line'), b);
+    });
+  });
+  var pair = document.getElementById('pairBtn');
+  if (pair) pair.addEventListener('click', function () {
+    speechSynthesis.cancel();
+    document.querySelectorAll('[data-voice]').forEach(function (x) { x.classList.remove('on'); });
+    say('NW', "Darling. You want to hear me tell a story?", null, function () {
+      say('YS', "Everyone's told one. If you don't, won't you look like you can't fit in?", null);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
