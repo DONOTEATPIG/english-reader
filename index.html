@@ -76206,12 +76206,14 @@ window.TL=[{"id":1,"title":"The Train","file":"audio/ch1.mp3?v=13","dur":1471.84
   };
 
   /* ---------- helpers ---------- */
-  var MEDIA_BASE = 'https://github.com/DONOTEATPIG/english-reader/releases/download/audio-v1/';
+  var MEDIA_BASE = 'https://donoteatpig.github.io/english-reader-media/';
+  var SPLIT_CH = 132; // 1-132 章同源托管，133 章起走镜像站点
   function mediaURL(u) {
-    // 章节音频托管在 GitHub Release（不受 Pages 单站 1GB 限制）
-    if (u.indexOf('audio/ch') === 0) {
-      return MEDIA_BASE + u.slice(6).replace(/\?.*$/, '');
+    var m = /^audio\/ch(\d+)\.mp3/.exec(u);
+    if (m && +m[1] > SPLIT_CH) {
+      return MEDIA_BASE + 'audio/ch' + m[1] + '.mp3';
     }
+    if (m) return 'audio/ch' + m[1] + '.mp3';
     return u;
   }
 
